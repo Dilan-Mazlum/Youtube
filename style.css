@@ -1,0 +1,237 @@
+
+.layout{
+    display: grid;
+    grid-template-columns: 240px auto ;
+    grid-template-rows:auto; 
+}
+.top{
+    display: flex;
+    align-items: center;
+    height: 56px;
+    width: 100%;
+
+}
+.list{
+    cursor: pointer;
+    padding: 8px;
+}
+.list:hover{
+    background-color: #f2f2f2;
+    border-radius: 100%;
+}
+.logo-youtube{
+   width: 95px;
+   padding-left: 15px;
+   cursor: pointer;
+}
+.search{
+    display: flex;
+    padding-left: 250px;
+}
+.search-input{
+    border: 1px solid #e1e1e1;
+    border-radius: 25px 0px 0px 25px;
+    height: 32px;
+    padding-left: 12px;
+    width: 530px;
+}
+.search-button{
+    border: 1px solid #e1e1e1;
+    border-radius: 0px 25px 25px 0px;
+    color: #2b2b2b;
+    background-color: #f8f8f8;
+    padding: 2px 15px;
+    cursor: pointer;
+
+}
+.search-button:hover{
+    background-color: #eae8e8;
+}
+.voice{
+    border-radius: 100%;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding:5px 6px ;
+    cursor: pointer;
+    margin-left: 15px;
+}
+.voice:hover{
+    background-color: #cfcdcd;
+}
+.video{
+    border-radius: 100%;
+    padding:5px 6px ;
+    cursor: pointer;
+    margin-left: 180px;
+}
+.video:hover{
+    background-color: #f2f2f2;
+    border-radius: 100%;
+}
+.notification{
+    border-radius: 100%;
+    padding:5px 6px ;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.notification:hover{
+    background-color: #f2f2f2;
+    border-radius: 100%;
+}
+.profile-img{
+   height: 35px;
+    border-radius: 100%;
+    cursor: pointer;
+    margin-left: 8px;
+
+}
+.navigation{
+    width: 240px;
+    position: absolute;
+    overflow: scroll;
+    overflow-x:hidden;
+    height: 100%;
+    cursor: pointer;
+
+}
+#color{
+    color: #0f0f0f;
+    font-weight: 200;
+
+}
+.left{
+    width: 210px;
+    padding: 15px 0 15px 10px;
+    border-bottom: 1px solid #e6e6e6;
+    color: #0f0f0f; 
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+
+}
+.items{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+   
+}
+ .navigation-item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap:19px;
+    padding-bottom: 9px; 
+}
+.navigation-item:hover{
+    background-color:#f2f2f2 ;
+    border-radius: 9px;
+}
+
+.you{
+    width: 100%;
+    padding: 15px 0 15px 10px;
+}
+.you:hover{
+    background-color: #f2f2f2;
+    border-radius: 9px;
+}
+.subscribe{
+    width: 100%;
+    padding: 15px 0 15px 10px;
+    cursor: text;
+}
+
+.subscribe-profile{
+    width: 25px;
+    border-radius: 100%;
+}
+
+.more-img{
+    height: 20px;
+    border-radius: 100%;
+}
+.main{
+    padding-left: 260px;
+    padding-top: 23px;
+    width: 80%;
+
+}
+.all-items{
+    display: flex;
+    justify-content: space-between;
+
+}
+.top-items{
+    background-color: #f2f2f2;
+    padding:8px;
+    border-radius:5px;
+    cursor: pointer;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight:500;
+  
+}
+.top-items:hover{
+    background-color: #eae8e8;
+}
+.contents{
+    padding-left: 270px;
+    padding-top: 28px;
+    display: grid;
+    grid-template-columns: 372px 372px 372px;
+
+}
+.content{
+    padding-bottom:70px;
+    cursor: pointer;
+    margin: 1px;
+}
+.content:hover{
+    background-color: #eae8e8;
+    border-radius: 25px;
+}
+
+.cont-img{
+    width: 365px;
+    border-radius: 5%;
+    margin: 5px;
+    
+}
+.cont-video{
+    padding-bottom: 15px;
+}
+.cont-icon{
+    display: flex;
+    gap: 15px;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-weight: 600;
+    padding-top: 12px;
+
+}
+.cont-icon-img{
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+
+}
+.cont-options{
+    padding-left: 45px;
+
+}
+#channel{
+    color: #606060;
+    font-size: 12px;
+    font-weight: 500;
+    padding-top: 10px;
+}
+.channel-name{
+    padding-bottom: 5px;
+}
+.view{
+    display: contents;
+    gap:5px
+}
