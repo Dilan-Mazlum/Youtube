@@ -167,7 +167,10 @@ table {
     background-color:#f2f2f2 ;
     border-radius: 9px;
 }
-
+.you{
+    font-weight: bold;
+    padding: 10px 15px;
+}
 .subscribe-profile{
     width: 25px;
     border-radius: 100%;
