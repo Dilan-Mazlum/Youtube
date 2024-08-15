@@ -1,38 +1,85 @@
 
-.layout{
-    display: grid;
-    grid-template-columns: 240px auto ;
-    grid-template-rows:auto; 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 .top{
     display: flex;
     align-items: center;
     height: 56px;
     width: 100%;
-
+    justify-content: space-between;
+    position: fixed;
+    background-color: #ffffff;
+    top:0;
+    z-index: 100;
 }
-.list{
+.hamburger{
     cursor: pointer;
     padding: 8px;
 }
-.list:hover{
+.hamburger:hover{
     background-color: #f2f2f2;
     border-radius: 100%;
 }
 .logo-youtube{
    width: 95px;
-   padding-left: 15px;
    cursor: pointer;
 }
-.search{
+.search-container{
     display: flex;
-    padding-left: 250px;
+    gap: 16px;
+    align-items: center;
+    height: 100%;
+}
+.search {
+    display: flex;
+    align-items: center;
 }
 .search-input{
     border: 1px solid #e1e1e1;
     border-radius: 25px 0px 0px 25px;
-    height: 32px;
     padding-left: 12px;
+    height: 32px;
     width: 530px;
 }
 .search-button{
@@ -42,57 +89,55 @@
     background-color: #f8f8f8;
     padding: 2px 15px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 30px;
 
 }
 .search-button:hover{
     background-color: #eae8e8;
 }
-.voice{
-    border-radius: 100%;
+.mic {
+    display: flex;
     align-items: center;
+    cursor: pointer;
     background-color: #f2f2f2;
-    padding:5px 6px ;
-    cursor: pointer;
-    margin-left: 15px;
-}
-.voice:hover{
-    background-color: #cfcdcd;
-}
-.video{
+    padding: 8px;
     border-radius: 100%;
-    padding:5px 6px ;
+    color: #0f0f0f;
+}
+.menu-item {
+    padding: 8px;
     cursor: pointer;
-    margin-left: 180px;
 }
-.video:hover{
-    background-color: #f2f2f2;
-    border-radius: 100%;
-}
-.notification{
-    border-radius: 100%;
-    padding:5px 6px ;
-    cursor: pointer;
-    margin-left: 8px;
-}
-.notification:hover{
+.menu-item:not(.profile):hover{
     background-color: #f2f2f2;
     border-radius: 100%;
 }
 .profile-img{
-   height: 35px;
+    height: 35px;
+    width: 35px;
     border-radius: 100%;
     cursor: pointer;
     margin-left: 8px;
 
 }
+.right-menu-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
 .navigation{
     width: 240px;
-    position: absolute;
-    overflow: scroll;
-    overflow-x:hidden;
-    height: 100%;
+    position: fixed;
+    overflow: hidden;
+    height: calc(100% - 70px);
     cursor: pointer;
-
+    top: 70px;
+    z-index: 100;
+}
+.navigation:hover {
+    overflow-y: scroll;
 }
 #color{
     color: #0f0f0f;
@@ -100,23 +145,15 @@
 
 }
 .left{
-    width: 210px;
-    padding: 15px 0 15px 10px;
     border-bottom: 1px solid #e6e6e6;
     color: #0f0f0f; 
     font-family: "Roboto", "Arial", sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
-
 }
-.items{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-   
+.left .p-b {
+    margin-bottom: 100px;
 }
  .navigation-item{
     display: flex;
@@ -124,25 +161,11 @@
     justify-content: flex-start;
     width: 100%;
     gap:19px;
-    padding-bottom: 9px; 
+    padding: 9px 9px 9px 32px; 
 }
 .navigation-item:hover{
     background-color:#f2f2f2 ;
     border-radius: 9px;
-}
-
-.you{
-    width: 100%;
-    padding: 15px 0 15px 10px;
-}
-.you:hover{
-    background-color: #f2f2f2;
-    border-radius: 9px;
-}
-.subscribe{
-    width: 100%;
-    padding: 15px 0 15px 10px;
-    cursor: text;
 }
 
 .subscribe-profile{
@@ -154,16 +177,25 @@
     height: 20px;
     border-radius: 100%;
 }
-.main{
-    padding-left: 260px;
-    padding-top: 23px;
-    width: 80%;
 
+.main-content {
+    padding-left: 260px;
+    width: 80%;
+    position: relative;
+    top: 88px;
+}
+.main{
+    position: fixed;
+    z-index: 99;
+    top: 56px;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 16px 0px;
 }
 .all-items{
     display: flex;
-    justify-content: space-between;
-
+    align-items: center;
+    gap: 16px;
 }
 .top-items{
     background-color: #f2f2f2;
@@ -179,27 +211,24 @@
     background-color: #eae8e8;
 }
 .contents{
-    padding-left: 270px;
     padding-top: 28px;
     display: grid;
     grid-template-columns: 372px 372px 372px;
+    gap: 16px;
 
 }
 .content{
-    padding-bottom:70px;
     cursor: pointer;
-    margin: 1px;
+    padding: 8px;
 }
 .content:hover{
     background-color: #eae8e8;
-    border-radius: 25px;
+    border-radius: 8px;
 }
 
 .cont-img{
-    width: 365px;
-    border-radius: 5%;
-    margin: 5px;
-    
+    width: 100%;
+    border-radius: 8px;
 }
 .cont-video{
     padding-bottom: 15px;
