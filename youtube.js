@@ -95,3 +95,184 @@ youtube.forEach((youtubes, key) => {
 
     contentsDiv.appendChild(content);
 });
+
+
+
+const mainContainer = document.querySelector('.main-contents');
+
+const itemtop = [
+    'Tümü',
+    'Müzik',
+    'Mix\'ler',
+    'Oyun',
+    'Sitcom\'lar',
+    'Canlı',
+    'Doğa',
+    'Futbol',
+    'Son Yüklenenler',
+    'İzlenenler',
+    'Yeni Öneriler'
+];
+
+const mainText = document.createElement("div");
+mainText.classList.add('main');
+const items = document.createElement("div");
+items.classList.add('all-items');
+
+itemtop.forEach(key => {
+    const topitem = document.createElement("div");
+    topitem.classList.add('top-items');
+    topitem.textContent = key;
+    items.appendChild(topitem);
+});
+
+mainText.appendChild(items);
+mainContainer.appendChild(mainText);
+
+const navigationitems = [
+    {
+        icon: 'home',
+        text: 'Anasayfa'
+    },
+    {
+        icon: 'smart_display',
+        text: 'Shorts'
+    },
+    {
+        icon: 'subscriptions',
+        text: 'Abonelikler'
+    },
+    {
+        icon: 'sound_sampler',
+        text: 'YouTube Music'
+    },
+
+];
+
+const navigationitems2 = [
+
+    {
+        icon: 'account_box',
+        text: 'Kanalınız'
+    },
+    {
+        icon: 'history',
+        text: 'Geçmiş'
+    },
+    {
+        icon: 'playlist_play',
+        text: 'Oynatma Listeleri'
+    },
+    {
+        icon: 'smart_display',
+        text: 'Videolarınız'  
+    },
+    {
+        icon: 'schedule',
+        text: 'Daha sonra izle'
+    },
+    {
+        icon: 'thumb_up',
+        text: 'Beğendiğim videolar'
+    },
+    {
+        icon: 'vertical_align_bottom',
+        text: 'İndirilenler'
+    },
+
+];
+const navigationitems3 = [
+    {
+        image:'https://yt3.googleusercontent.com/L0v9aNMeOlm2LoOWHEw2UjVr-MLRyNbTqUM0QRwAJDaWLmbpH8rpDA0Wo9BOD0kj9euKwfVJ=s900-c-k-c0x00ffffff-no-rj',
+        itemtext:'Tarkan'
+    },
+    {
+        image:'https://yt3.googleusercontent.com/kDz0dXEKu0_kGt4ThuOT9rkEc6lMBcIkLIzaC65XW56EXNRVeMw9vFwEBO-5pqWNww2yf18E9A=s900-c-k-c0x00ffffff-no-rj',
+        itemtext:'Sıla'
+    },
+    {
+        image:'https://yt3.googleusercontent.com/eZ_owKgcvyAUDajGic13hjoEJ5SMh__PB7v0vfxW8To1-54jaxNTJtSN1baXC_mkaLbUHy144w=s900-c-k-c0x00ffffff-no-rj',
+        itemtext:'Sefo'
+    }
+
+];
+
+const navigationitems4 = [
+    {
+        icon: 'local_fire_department',
+        text: 'Trendler'
+    },
+    {
+        icon: 'music_note',
+        text: 'Müzik'
+    },
+    {
+        icon: 'podcasts',
+        text: 'Canlı'
+    },
+    {
+        icon: 'sports_esports',
+        text: 'Oyun'  
+    },
+    {
+        icon: 'trophy',
+        text: 'Spor'
+    },
+];
+let result = navigationitems.concat(navigationitems2,navigationitems3,navigationitems4)
+
+console.log(result)
+const navigationcontainer = document.querySelector('.navigation');
+
+
+function renderSideMenu(array) {
+    const leftcontainer = document.createElement("div");
+    leftcontainer.classList.add('left');
+    array.forEach((navigationkey,key) => {
+        const navigationhome = document.createElement("div");
+        navigationhome.classList.add('navigation-item');
+        let navigationhomeicon = '';
+        if(navigationkey.icon){
+            navigationhomeicon = document.createElement("span");
+            navigationhomeicon.classList.add('material-symbols-outlined');
+            navigationhomeicon.textContent = navigationkey.icon;
+            navigationhomeicon.setAttribute('id','color');
+        }
+        if(navigationkey.image){
+            navigationhomeicon = document.createElement("img");
+            navigationhomeicon.classList.add('subscribe-profile');
+            navigationhomeicon.src =navigationkey.image;
+            navigationhomeicon.textContent = navigationkey.itemtext
+        }
+        const hometext = document.createElement("div")
+        hometext.classList.add('deneme')
+        hometext.textContent= navigationkey.text || navigationkey.itemtext
+        
+        navigationcontainer.appendChild(leftcontainer)
+        navigationhome.appendChild(navigationhomeicon)
+        navigationhomeicon.appendChild(hometext)
+        navigationhome.appendChild(hometext)
+        leftcontainer.appendChild(navigationhome)
+    });
+
+    
+     
+const index = 3; 
+const itemindex = document.querySelectorAll('.navigation-item');
+if (index >= 0 && index < itemindex .length) {
+    itemindex [index].style.borderBottom = '1px solid #e6e6e6';
+}
+
+const index1 = 10; 
+const itemindex1 = document.querySelectorAll('.navigation-item');
+if (index1 >= 0 && index1 < itemindex1 .length) {
+    itemindex1 [index1].style.borderBottom = '1px solid #e6e6e6';
+}
+const index2 = 13; 
+const itemindex2 = document.querySelectorAll('.navigation-item');
+if (index2 >= 0 && index2 < itemindex2 .length) {
+    itemindex2 [index2].style.borderBottom = '1px solid #e6e6e6';
+}
+}
+
+renderSideMenu(result)
