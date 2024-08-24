@@ -219,7 +219,41 @@ const navigationitems4 = [
         text: 'Spor'
     },
 ];
-let result = navigationitems.concat(navigationitems2,navigationitems3,navigationitems4)
+const navigationitems5 = [
+    {
+        image:'https://cdn-1.webcatalog.io/catalog/youtube-studio/youtube-studio-icon-filled-256.png?v=1714773038492',
+        itemtext:'YouTube Studio'
+    },
+    {
+        image:'https://play-lh.googleusercontent.com/76AjYITcB0dI0sFqdQjNgXQxRMlDIswbp0BAU_O5Oob-73b6cqKggVlAiNXQAW5Bl1g=w240-h480-rw',
+        itemtext:'YouTube Music'
+    },
+    {
+        image:'https://play-lh.googleusercontent.com/iMc1P4fc7bMSVvQaztKcoQ5MS1J7OLu0bOkz2kVnXZTYkiJ_k3AluzkvOAntYCthgOXQ',
+        itemtext:'YouTube Kids'
+    }
+
+];
+const navigationitems6 = [
+    {
+        icon: 'settings',
+        text: 'Ayarlar'
+    },
+    {
+        icon: 'flag',
+        text: 'İçerik bildirme geçmişi'
+    },
+    {
+        icon: 'help',
+        text: 'Yardım'
+    },
+    {
+        icon: 'feedback',
+        text: 'Geri bildirim gönder'  
+    },
+
+];
+let result = navigationitems.concat(navigationitems2,navigationitems3,navigationitems4,navigationitems5,navigationitems6)
 
 console.log(result)
 const navigationcontainer = document.querySelector('.navigation');
@@ -241,7 +275,7 @@ function renderSideMenu(array) {
         if(navigationkey.image){
             navigationhomeicon = document.createElement("img");
             navigationhomeicon.classList.add('subscribe-profile');
-            navigationhomeicon.src =navigationkey.image;
+            navigationhomeicon.src =navigationkey.image
             navigationhomeicon.textContent = navigationkey.itemtext
         }
         const hometext = document.createElement("div")
@@ -272,6 +306,16 @@ const index2 = 13;
 const itemindex2 = document.querySelectorAll('.navigation-item');
 if (index2 >= 0 && index2 < itemindex2 .length) {
     itemindex2 [index2].style.borderBottom = '1px solid #e6e6e6';
+}
+const index3 = 18; 
+const itemindex3 = document.querySelectorAll('.navigation-item');
+if (index3 >= 0 && index3 < itemindex3 .length) {
+    itemindex3 [index3].style.borderBottom = '1px solid #e6e6e6';
+}
+const index4 = 21; 
+const itemindex4 = document.querySelectorAll('.navigation-item');
+if (index4 >= 0 && index4 < itemindex4 .length) {
+    itemindex4 [index4].style.borderBottom = '1px solid #e6e6e6';
 }
 }
 
